@@ -11,6 +11,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer2:8001/eureka/,http://peer3:8002/eureka/
+    fetch-registry: false  # 禁止从其他 Eureka 实例获取服务注册信息
+    register-with-eureka: false  # 禁止向其他 Eureka 实例注册服务
 ---
 spring:
   application:
@@ -24,6 +26,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:8000/eureka/,http://peer3:8002/eureka/
+    fetch-registry: false  # 禁止从其他 Eureka 实例获取服务注册信息
+    register-with-eureka: false  # 禁止向其他 Eureka 实例注册服务
 ---
 spring:
   application:
@@ -37,3 +41,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/
+    fetch-registry: false  # 禁止从其他 Eureka 实例获取服务注册信息
+    register-with-eureka: false  # 禁止向其他 Eureka 实例注册服务
