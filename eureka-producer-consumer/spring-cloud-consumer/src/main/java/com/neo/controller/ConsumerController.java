@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumerController {
 
+    private final HelloRemote HelloRemote;
+
     @Autowired
-    HelloRemote HelloRemote;
-	
+    public ConsumerController(com.neo.remote.HelloRemote helloRemote) {
+        HelloRemote = helloRemote;
+    }
+
     @RequestMapping("/hello/{name}")
     public String index(@PathVariable("name") String name) {
         return HelloRemote.hello(name);
