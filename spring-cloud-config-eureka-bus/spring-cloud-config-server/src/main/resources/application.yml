@@ -12,7 +12,7 @@ spring:
           username: yourname                                        # git仓库的账号
           password: yourpass                                    # git仓库的密码
   rabbitmq:
-    host: 192.168.0.6
+    host: localhost
     port: 5672
     username: admin
     password: 123456
