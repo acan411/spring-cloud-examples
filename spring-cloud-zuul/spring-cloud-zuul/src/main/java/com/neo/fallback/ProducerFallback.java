@@ -15,7 +15,7 @@ import java.io.InputStream;
 
 @Component
 public class ProducerFallback implements FallbackProvider {
-    private final Logger logger = LoggerFactory.getLogger(FallbackProvider.class);
+    private final Logger logger = LoggerFactory.getLogger(ProducerFallback.class);
 
     //指定要处理的 service。
     @Override
@@ -63,7 +63,7 @@ public class ProducerFallback implements FallbackProvider {
     public ClientHttpResponse fallbackResponse(Throwable cause) {
         if (cause != null && cause.getCause() != null) {
             String reason = cause.getCause().getMessage();
-            logger.info("Excption {}",reason);
+            logger.info("Exception {}", reason);
         }
         return fallbackResponse();
     }

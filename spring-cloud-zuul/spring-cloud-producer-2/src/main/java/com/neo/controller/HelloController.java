@@ -13,7 +13,7 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String index(@RequestParam String name) {
-        logger.info("request two name is "+name);
+        logger.info("request two name is {}", name);
         try{
             Thread.sleep(1000000);
         }catch ( Exception e){

@@ -40,14 +40,13 @@ public class TokenFilter extends ZuulFilter {
             ctx.setSendZuulResponse(true); //对请求进行路由
             ctx.setResponseStatusCode(200);
             ctx.set("isSuccess", true);
-            return null;
         } else {
             ctx.setSendZuulResponse(false); //不对其进行路由
             ctx.setResponseStatusCode(400);
             ctx.setResponseBody("token is empty");
             ctx.set("isSuccess", false);
-            return null;
         }
+        return null;
     }
 
 }
